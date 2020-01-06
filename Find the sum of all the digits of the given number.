@@ -1,0 +1,37 @@
+/*
+Find the sum of all the digits in the number.
+*/
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int num;
+	cout<<"Enter the number :- ";
+	cin>>num;
+	
+	int rem;
+	int sum = 0;
+	
+	while(num!=0)
+	{
+		rem = num % 10;
+		sum = sum + rem;
+		num = num / 10;
+	}
+	
+	cout<<"\nSum of all the digit :- "<<sum;
+	
+	return 0;
+}
+
+/*
+Output :-
+
+Enter the number :- 12225
+
+Sum of all the digit :- 12
+
+--------------------------------
+*/
