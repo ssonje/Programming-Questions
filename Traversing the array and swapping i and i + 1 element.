@@ -1,0 +1,63 @@
+/*
+Traversing the array and swapping i and i + 1 element.
+*/
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int arr1[10];
+	int n;
+	
+	cout<<"\nHow many number of elements in the array 1 :- ";
+	cin>>n;
+	
+	cout<<"\nEnter the number of elements of array 1 :- ";
+	for(int i=0;i<n;i++)
+	{
+		cin>>arr1[i];
+	}
+	
+	int pos;
+	cout<<"\nTake the position i to switch the element :- ";
+	cin>>pos;
+	
+	pos = pos - 1;
+	
+	int temp;
+	temp = arr1[pos];
+	arr1[pos] = arr1[pos+1];
+	arr1[pos+1] = temp;
+	
+	cout<<"\nElements of array after swapping are :- ";
+	for(int i=0;i<n;i++)
+		cout<<arr1[i]<<endl;
+	return 0;
+}
+
+/*
+Output :-
+
+
+How many number of elements in the array 1 :- 5
+
+Enter the number of elements of array 1 :-
+10
+20
+30
+40
+50
+
+Take the position i to switch the element :-
+4
+
+Elements of array after swapping are :- 
+10
+20
+30
+50
+40
+
+--------------------------------
+*/
