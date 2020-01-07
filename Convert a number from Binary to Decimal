@@ -1,0 +1,112 @@
+/*
+Convert a number from Binary to Decimal.
+*/
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int Binary_num;
+	cout<<"\nEnter the Binary number :- ";
+	cin>>Binary_num;
+	
+	int Decimal_num=0;
+	int temp1,temp2;
+	int answer=0;
+	int count=0;
+	int rem;
+	int base_answer = 1;
+			
+	temp1 = Binary_num;
+	temp2 = Binary_num;
+	
+	while(temp1!=0)
+	{
+		temp1 = temp1 / 10;
+		count++;
+	}
+	
+	cout<<"\nCount :- "<<count;
+	
+	int count1=0;
+	while(temp2!=0)
+	{
+		rem = temp2 % 10;
+		
+		cout<<"\n\nTemp :- "<<temp2;
+		cout<<"\nRemainder :- "<<rem;
+		
+		if(count==0 && rem==0)
+		{
+			answer = 1;
+			base_answer=0;
+			count1++;
+			Decimal_num = Decimal_num + answer + base_answer;
+			base_answer=1;
+		}
+		else if(rem==0)
+		{
+			answer = 0;
+			base_answer=0;
+			count1++;
+			Decimal_num = Decimal_num + answer + base_answer;
+			base_answer=1;
+		}
+		else
+		{
+			int power = count1;
+			for(int i=1;i<=power;i++)
+			{
+				base_answer = base_answer * 2;
+			}
+			cout<<"\nBase answer :- "<<base_answer;
+			count1++;
+			Decimal_num = Decimal_num + answer + base_answer;
+			base_answer=1;
+		}
+		
+		cout<<"\nAnswer :- "<<answer<<"\n";
+		
+		temp2 = temp2 / 10;
+		
+	}
+	
+	cout<<"\nDecimal Number :- "<<Decimal_num;
+	return 0;
+}
+
+/*
+Output :- 
+
+Enter the Binary number :- 1110
+
+Count :- 4
+
+Temp :- 1110
+Remainder :- 0
+Answer :- 0
+
+
+Temp :- 111
+Remainder :- 1
+Base answer :- 2
+Answer :- 0
+
+
+Temp :- 11
+Remainder :- 1
+Base answer :- 4
+Answer :- 0
+
+
+Temp :- 1
+Remainder :- 1
+Base answer :- 8
+Answer :- 0
+
+Decimal Number :- 14
+
+--------------------------------
+
+*/
