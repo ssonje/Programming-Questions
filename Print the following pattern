@@ -1,0 +1,56 @@
+/*
+Print the following pattern.
+
+N =3 ->
+
+	1*2*3
+	7*8*9
+	4*5*6
+
+*/
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int count=0;
+	int n=3;
+	int a=1;
+    int b;
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=n;j++)
+		{
+			if(count==n-1 || count==0)
+			{
+				cout<<a;
+				if(j!=n)
+				{
+					cout<<"*";
+				}
+				a++;
+				b=a*2-1;
+			}
+			else
+			{
+				cout<<b;
+				if(j!=n)
+				{
+					cout<<"*";
+				}
+				b++;
+			}
+		}
+		cout<<"\n";
+		count++;
+	}
+
+}
+
+/*
+Output :- 
+1*2*3
+7*8*9
+4*5*6
+*/
