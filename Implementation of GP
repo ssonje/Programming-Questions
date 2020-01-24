@@ -1,0 +1,57 @@
+/*
+	Implementation of GP 
+*/
+
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main() 
+{
+	//code
+	int t;
+	int a,b;
+	int r;
+	int n;
+	int N;
+	cout<<"\nEnter number of cases :- ";
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+		cout<<"\nEnter the first and second element of the GP :- \n";
+	    cin>>a>>b;
+	    cout<<"\nEnter the number of terms :- ";
+	    cin>>n;
+	    r = b / a;
+	    
+	    int result = pow(r,n-1);
+	    N = a * result;
+	    
+	    cout<<"\nLast term of the GP is :- "<<N<<endl;
+	}
+	return 0;
+}
+
+/*
+
+Enter number of cases :- 2
+
+Enter the first and second element of the GP :-
+1
+2
+
+Enter the number of terms :- 4
+
+Last term of the GP is :- 8
+
+Enter the first and second element of the GP :-
+2
+4
+
+Enter the number of terms :- 3
+
+Last term of the GP is :- 8
+
+--------------------------------
+
+*/
